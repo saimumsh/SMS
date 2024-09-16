@@ -1,0 +1,39 @@
+﻿
+@model IEnumerable<SMS.core.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Student</h1>
+
+
+<div style="background-image:url('https://static.vecteezy.com/system/resources/thumbnails/002/375/687/small/school-stationary-background-free-vector.jpg')" class="d-flex justify-content-end">
+    <a  asp-action="Create" type="button" class="btn btn-lg btn-info" >Add</a>
+</div>
+<hr/>
+
+    <div class="d-flex flex-wrap justify-content-center">
+        @foreach (var item in Model)
+        {
+        <div class="card text-white bg-info m-3" style="max-width: 18rem;">
+                <div class="card-header">@item.Name</div>
+                <div class="card-body">
+                   
+                    <h5 class="card-title">@item.ClassLevel.Name</h5>
+                    
+                    <p class="card-text">Encoder Kindergarden</p>
+                </div>
+                <div class="d-flex justify-content-sm-center">
+                <a asp-action="Edit" type="button" class="btn btn-sm btn-outline-success" asp-route-id="@item.ID">Edit</a>
+                 <a asp-action="Delete" type="button" class="btn btn-sm btn-outline-danger" asp-route-id="@item.ID">Delete</a>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a asp-action="#" class="">Details</a>
+                </div>
+            </div>
+
+        }
+    
+
+   </div>
