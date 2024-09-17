@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SMS.core.Models
 {
-    public class Designation:BaseEntiry
+    public class Designation:BaseEntity
     {
         public string Title { get; set; }
         public string Description { get; set; }

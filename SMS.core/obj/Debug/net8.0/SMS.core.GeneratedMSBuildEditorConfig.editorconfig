@@ -16,6 +16,6 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SMS.core
-build_property.ProjectDir = D:\Dotnet Projects\School Management System\SMS.core\
+build_property.ProjectDir = D:\ASP.NET PROJECTS\School Management System\SMS.core\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

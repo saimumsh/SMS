@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "06JklOezCJwO4wC8rUL3iKwrK8Hzs7MPjDwRGCg9MEo5u6l9nPS5GZv5fnCT92LOoy8dXm5Y04kyFA4r+3u41Q==",
+  "dgSpecHash": "ti0fqFOEU04ig7vKgbDSX2hhSWuXPfZDHNLdMFngWX8KDNZYgAFzubFNhslcFxDnfK8xHXH1bU0EhEOJupTp7g==",
   "success": true,
-  "projectFilePath": "D:\\Dotnet Projects\\School Management System\\SMS.core\\SMS.core.csproj",
+  "projectFilePath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\SMS.core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Md. Shahadat Hossain\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Md. Shahadat Hossain\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

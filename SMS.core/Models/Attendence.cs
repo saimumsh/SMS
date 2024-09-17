@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SMS.core.Models
 {
-    public class Attendence:BaseEntiry
+    public class Attendence:BaseEntity
     {
         public DateTime DateTime { get; set; }
         public bool Ispresent { get; set; }

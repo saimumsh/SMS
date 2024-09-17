@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dotnet Projects\\School Management System\\SMS.web\\SMS.web.csproj": {}
+    "D:\\ASP.NET PROJECTS\\School Management System\\SMS.web\\SMS.web.csproj": {}
   },
   "projects": {
-    "D:\\Dotnet Projects\\School Management System\\SMS.core\\SMS.core.csproj": {
+    "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\SMS.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dotnet Projects\\School Management System\\SMS.core\\SMS.core.csproj",
+        "projectUniqueName": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\SMS.core.csproj",
         "projectName": "SMS.core",
-        "projectPath": "D:\\Dotnet Projects\\School Management System\\SMS.core\\SMS.core.csproj",
+        "projectPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\SMS.core.csproj",
         "packagesPath": "C:\\Users\\Md. Shahadat Hossain\\.nuget\\packages\\",
-        "outputPath": "D:\\Dotnet Projects\\School Management System\\SMS.core\\obj\\",
+        "outputPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Md. Shahadat Hossain\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,14 +89,14 @@
         }
       }
     },
-    "D:\\Dotnet Projects\\School Management System\\SMS.data\\SMS.data.csproj": {
+    "D:\\ASP.NET PROJECTS\\School Management System\\SMS.data\\SMS.data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dotnet Projects\\School Management System\\SMS.data\\SMS.data.csproj",
+        "projectUniqueName": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.data\\SMS.data.csproj",
         "projectName": "SMS.data",
-        "projectPath": "D:\\Dotnet Projects\\School Management System\\SMS.data\\SMS.data.csproj",
+        "projectPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.data\\SMS.data.csproj",
         "packagesPath": "C:\\Users\\Md. Shahadat Hossain\\.nuget\\packages\\",
-        "outputPath": "D:\\Dotnet Projects\\School Management System\\SMS.data\\obj\\",
+        "outputPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Md. Shahadat Hossain\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -113,8 +113,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Dotnet Projects\\School Management System\\SMS.core\\SMS.core.csproj": {
-                "projectPath": "D:\\Dotnet Projects\\School Management System\\SMS.core\\SMS.core.csproj"
+              "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\SMS.core.csproj": {
+                "projectPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\SMS.core.csproj"
               }
             }
           }
@@ -178,14 +178,14 @@
         }
       }
     },
-    "D:\\Dotnet Projects\\School Management System\\SMS.service\\SMS.service.csproj": {
+    "D:\\ASP.NET PROJECTS\\School Management System\\SMS.service\\SMS.service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dotnet Projects\\School Management System\\SMS.service\\SMS.service.csproj",
+        "projectUniqueName": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.service\\SMS.service.csproj",
         "projectName": "SMS.service",
-        "projectPath": "D:\\Dotnet Projects\\School Management System\\SMS.service\\SMS.service.csproj",
+        "projectPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.service\\SMS.service.csproj",
         "packagesPath": "C:\\Users\\Md. Shahadat Hossain\\.nuget\\packages\\",
-        "outputPath": "D:\\Dotnet Projects\\School Management System\\SMS.service\\obj\\",
+        "outputPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Md. Shahadat Hossain\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -202,8 +202,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Dotnet Projects\\School Management System\\SMS.data\\SMS.data.csproj": {
-                "projectPath": "D:\\Dotnet Projects\\School Management System\\SMS.data\\SMS.data.csproj"
+              "D:\\ASP.NET PROJECTS\\School Management System\\SMS.data\\SMS.data.csproj": {
+                "projectPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.data\\SMS.data.csproj"
               }
             }
           }
@@ -267,14 +267,14 @@
         }
       }
     },
-    "D:\\Dotnet Projects\\School Management System\\SMS.web\\SMS.web.csproj": {
+    "D:\\ASP.NET PROJECTS\\School Management System\\SMS.web\\SMS.web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dotnet Projects\\School Management System\\SMS.web\\SMS.web.csproj",
+        "projectUniqueName": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.web\\SMS.web.csproj",
         "projectName": "SMS.web",
-        "projectPath": "D:\\Dotnet Projects\\School Management System\\SMS.web\\SMS.web.csproj",
+        "projectPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.web\\SMS.web.csproj",
         "packagesPath": "C:\\Users\\Md. Shahadat Hossain\\.nuget\\packages\\",
-        "outputPath": "D:\\Dotnet Projects\\School Management System\\SMS.web\\obj\\",
+        "outputPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Md. Shahadat Hossain\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -291,11 +291,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Dotnet Projects\\School Management System\\SMS.data\\SMS.data.csproj": {
-                "projectPath": "D:\\Dotnet Projects\\School Management System\\SMS.data\\SMS.data.csproj"
+              "D:\\ASP.NET PROJECTS\\School Management System\\SMS.data\\SMS.data.csproj": {
+                "projectPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.data\\SMS.data.csproj"
               },
-              "D:\\Dotnet Projects\\School Management System\\SMS.service\\SMS.service.csproj": {
-                "projectPath": "D:\\Dotnet Projects\\School Management System\\SMS.service\\SMS.service.csproj"
+              "D:\\ASP.NET PROJECTS\\School Management System\\SMS.service\\SMS.service.csproj": {
+                "projectPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.service\\SMS.service.csproj"
               }
             }
           }

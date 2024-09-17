@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SMS.core.Models
 {
-    public class ClassLevel:BaseEntiry
+    public class ClassLevel:BaseEntity
     {
         public string Name { get; set; }
-        List<Teacher> Teachers { get; set; }
-        List<Student> Students { get; set; }
-        List<Subject> Subjects { get; set; }
+        ICollection<Teacher> Teachers { get; set; }
+        ICollection<Student> Students { get; set; }
+        ICollection<Subject> Subjects { get; set; }
         public ResultSheet ResultSheet { get; set; }
     }
 }
