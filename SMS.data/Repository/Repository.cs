@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SMS.data.Repository
 {
-    public abstract  class Repository<T> : IRepository<T> where T : BaseEntiry
+    public abstract  class Repository<T> : IRepository<T> where T : BaseEntity
     {
         private readonly ApplicationDbContext _db;
         public Repository(ApplicationDbContext db)

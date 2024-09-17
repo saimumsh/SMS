@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dotnet Projects\\School Management System\\SMS.core\\SMS.core.csproj": {}
+    "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\SMS.core.csproj": {}
   },
   "projects": {
-    "D:\\Dotnet Projects\\School Management System\\SMS.core\\SMS.core.csproj": {
+    "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\SMS.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dotnet Projects\\School Management System\\SMS.core\\SMS.core.csproj",
+        "projectUniqueName": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\SMS.core.csproj",
         "projectName": "SMS.core",
-        "projectPath": "D:\\Dotnet Projects\\School Management System\\SMS.core\\SMS.core.csproj",
+        "projectPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\SMS.core.csproj",
         "packagesPath": "C:\\Users\\Md. Shahadat Hossain\\.nuget\\packages\\",
-        "outputPath": "D:\\Dotnet Projects\\School Management System\\SMS.core\\obj\\",
+        "outputPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Md. Shahadat Hossain\\AppData\\Roaming\\NuGet\\NuGet.Config",

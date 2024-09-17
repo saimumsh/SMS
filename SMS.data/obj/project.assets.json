@@ -4587,11 +4587,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dotnet Projects\\School Management System\\SMS.data\\SMS.data.csproj",
+      "projectUniqueName": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.data\\SMS.data.csproj",
       "projectName": "SMS.data",
-      "projectPath": "D:\\Dotnet Projects\\School Management System\\SMS.data\\SMS.data.csproj",
+      "projectPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.data\\SMS.data.csproj",
       "packagesPath": "C:\\Users\\Md. Shahadat Hossain\\.nuget\\packages\\",
-      "outputPath": "D:\\Dotnet Projects\\School Management System\\SMS.data\\obj\\",
+      "outputPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Md. Shahadat Hossain\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4608,8 +4608,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Dotnet Projects\\School Management System\\SMS.core\\SMS.core.csproj": {
-              "projectPath": "D:\\Dotnet Projects\\School Management System\\SMS.core\\SMS.core.csproj"
+            "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\SMS.core.csproj": {
+              "projectPath": "D:\\ASP.NET PROJECTS\\School Management System\\SMS.core\\SMS.core.csproj"
             }
           }
         }

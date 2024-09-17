@@ -7,52 +7,59 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SMS.web.styles.css" asp-append-version="true" />
+    <style>
+        /* Sidebar styles */
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            background-color: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            padding-top: 20px;
+        }
+        .sidebar .nav-link {
+            color: black;
+        }
+        .sidebar .nav-link:hover {
+            background-color: #e9ecef;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-gradient border-bottom box-shadow mb-3">
-            <div class="container-fluid ">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-xl-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-black" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-black" asp-area="" asp-controller="Teacher" asp-action="Index">Teacher</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-black" asp-area="" asp-controller="Student" asp-action="Index">Student</a>
-                        </li>
-                      
-                        <li class="nav-item">
-                            <a class="nav-link text-black" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <div class="w-100 d-xl-inline-flex justify-content-end">
-                        <li class="nav-item">
-                            <input type="text" placeholder="Search..">
-                        </li>
-                        </div>
-                    </ul>
-                </div>
-            </div>
+    <div class="sidebar">
+        <nav class="nav flex-column">
+            <a class="navbar-brand text-center mb-3" asp-area="" asp-controller="Home" asp-action="Index">SMS.web</a>
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <a class="nav-link" asp-area="" asp-controller="Teacher" asp-action="Index">Teacher</a>
+            <a class="nav-link" asp-area="" asp-controller="Student" asp-action="Index">Student</a>
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>         
         </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <div class="main-content">
+        <header>
+            <h1 class="mb-4">Welcome to SMS.web</h1>
+        </header>
+
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted mt-auto">
         <div class="container">
             &copy; 2023 - SMS.web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
