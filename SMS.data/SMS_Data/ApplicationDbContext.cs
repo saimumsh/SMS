@@ -19,6 +19,7 @@ namespace SMS.data.SMS_Data
         public DbSet<Attendence> Attendents { get; set; }
         public DbSet<Designation> Designations { get; set; }
         public DbSet<ResultSheet> ResultsSheets { get; set; }
+        public DbSet<Exam> Exams { get; set; }
 
     }
 }

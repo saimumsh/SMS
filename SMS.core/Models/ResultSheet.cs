@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 namespace SMS.core.Models
 {
     public class ResultSheet:BaseEntity
-    {
-        public int Marks { get; set; }
-        public string ExamTerm { get; set; }
-        public ICollection<Subject> Subjects { get; set; }
-       
+    { 
+        public decimal MarksObtained { get; set; }
+        public string Grade { get; set; }
+
+        // Foreign Keys
+        public Guid ExamID { get; set; }
+        public Exam Exam { get; set; }
+
+        public Guid StudentID { get; set; }
+        public Student Student { get; set; }
     }
+
 }

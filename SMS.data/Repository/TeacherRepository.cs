@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SMS.core.Models;
+using SMS.data.Repository.Core;
+using SMS.data.Repository.Interfaces;
 using SMS.data.SMS_Data;
 using System;
 using System.Collections.Generic;
@@ -19,7 +21,7 @@ namespace SMS.data.Repository
 
         public async Task<IEnumerable<Teacher>> GetAllTeacherAsync()
         {
-            var teachers = await _db.Teachers.Include(x=>x.ClassLevel).ToListAsync();
+            var teachers = await _db.Teachers.Include(x=>x.Classes).Include(x=>x.Subjects).ToListAsync();
             return teachers;
         }
     }

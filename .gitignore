@@ -57,6 +57,11 @@ artifacts/
 *.sqlite
 *.mdf
 *.ldf
+*.dbmdl
+*.jfm
+
+# Migrations (EF Core)
+Migrations/
 
 # Local history
 .localhistory
@@ -95,3 +100,34 @@ wwwroot/lib/
 
 # JetBrains Rider
 .idea/
+
+# Log files
+*.log
+
+# ASP.NET specific files
+appsettings*.json
+appsettings*.Development.json
+secrets.json
+
+# LocalDB database files
+*.mdf
+*.ldf
+*.ndf
+
+# Resharper files
+_ReSharper*/
+*.DotSettings.user
+
+# Rider specific files
+.idea/
+.idea/*
+
+# Azure Web App publish settings
+.publishxml
+
+# Publish directory
+PublishProfiles/
+App_Data/
+
+# IIS Express settings
+/.vs/

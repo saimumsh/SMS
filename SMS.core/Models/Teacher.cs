@@ -27,12 +27,8 @@ namespace SMS.core.Models
         [Required(ErrorMessage = "Salary is Required !")]
         [Display(Name = "Salary")]
         public int Salary { get; set; }
-        public Guid ClassId {  get; set; }
-        [ForeignKey(nameof(DesignationId))]
-        public int DesignationId { get; set; } 
-        [ForeignKey(nameof(ClassId))]
-        public ClassLevel ClassLevel { get; set; }
-        public Designation Designation { get; set; }
+        public ICollection<ClassLevel>? Classes { get; set; }
+        public ICollection<Subject>? Subjects { get; set; }
         [NotMapped]
         public string FullName
         {

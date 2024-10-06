@@ -7,8 +7,12 @@ namespace SMS.web.ViewModels
     {
         public DomMapper()
         {
-            CreateMap<StudenView, Student>();
-            CreateMap<Student, StudenView>();
+            CreateMap<StudenModel, Student>();
+            CreateMap<Student, StudenModel>();
+            CreateMap<Teacher, TeacherModel>();
+            CreateMap<TeacherModel, Teacher>();
+            CreateMap<ClassModel, ClassLevel>();
+            CreateMap<ClassLevel,ClassModel>();
         }
 
 

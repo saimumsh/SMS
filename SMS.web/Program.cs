@@ -5,6 +5,9 @@ using SMS.data.Repository;
 using SMS.web.ViewModels;
 using AutoMapper;
 using SMS.service;
+using SMS.service.Interfaces;
+using SMS.data.Repository.Interfaces;
+using SMS.data.Repository.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +18,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(Options =>
     Options.UseSqlServer(builder.Configuration.GetConnectionString("SMSConnection")));
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
-//builder.Services.AddScoped<IRepository<>, Repository>();
+
 builder.Services.AddScoped<IClassRepository, ClassRepository>();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
