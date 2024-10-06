@@ -1,4 +1,6 @@
 ﻿using SMS.core.Models;
+using SMS.data.Repository.Core;
+using SMS.data.Repository.Interfaces;
 using SMS.data.SMS_Data;
 using System;
 using System.Collections.Generic;

@@ -10,7 +10,8 @@ namespace SMS.core.Models
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        List<Teacher> Teachers { get; set; }
+        public Guid TeacherId { get; set; }
+        public Teacher Teacher { get; set;}
 
     }
 }

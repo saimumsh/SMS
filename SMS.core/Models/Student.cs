@@ -24,9 +24,11 @@ namespace SMS.core.Models
         public string? PhoneNumber { get; set; }
         [Display(Name = "Address")]
         public string? Address { get; set; }
-        public ICollection<ClassLevel> ClassLevel { get; set; }
-        public Attendence? Attendence { get; set; }
-        public ResultSheet? ResultSheet { get; set; }
+        public Guid ClassLevelId { get; set; }
+        public ClassLevel ClassLevel { get; set; }       
+        public ICollection<Student> Students { get; set; }
+        public ICollection<Attendence> Attendence { get; set; } 
+
         [NotMapped]
         public string FullName
         {

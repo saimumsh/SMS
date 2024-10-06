@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SMS.core.Models;
-using SMS.data.Repository;
+using SMS.data.Repository.Interfaces;
 using SMS.data.SMS_Data;
+using SMS.service.Core;
+using SMS.service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

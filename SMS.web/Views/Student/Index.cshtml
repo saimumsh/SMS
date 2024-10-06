@@ -1,39 +1,55 @@
-﻿
-@model IEnumerable<SMS.core.Models.Student>
+﻿@model IEnumerable<SMS.core.Models.Student>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Student List";
 }
 
-<h1>Student</h1>
+<h1>Student List</h1>
 
+<!-- Search Form -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <!-- Search Form -->
+    <form method="get" asp-action="Index" class="me-3">
+        <div class="input-group">
+            <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control" placeholder="Search student by name..." />
+            <button class="btn btn-info" type="submit">Search</button>
+        </div>
+    </form>
 
-<div style="background-image:url('https://static.vecteezy.com/system/resources/thumbnails/002/375/687/small/school-stationary-background-free-vector.jpg')" class="d-flex justify-content-end">
-    <a  asp-action="Create" type="button" class="btn btn-lg btn-info" >Add</a>
+    <!-- Add Student Button -->
+    <a asp-action="Create" class="btn btn-info">Add Student</a>
 </div>
-<hr/>
 
-    <div class="d-flex flex-wrap justify-content-center">
+<hr />
+
+<!-- Student Cards -->
+<div class="row justify-content-center">
+    @if (Model.Any())
+    {
         @foreach (var item in Model)
         {
-        <div class="card text-white bg-info m-3" style="max-width: 18rem;">
-                <div class="card-header">@item.Name</div>
-                <div class="card-body">
-                   
-                    <h5 class="card-title">@item.ClassLevel.Name</h5>
-                    
-                    <p class="card-text">Encoder Kindergarden</p>
-                </div>
-                <div class="d-flex justify-content-sm-center">
-                <a asp-action="Edit" type="button" class="btn btn-sm btn-outline-success" asp-route-id="@item.ID">Edit</a>
-                 <a asp-action="Delete" type="button" class="btn btn-sm btn-outline-danger" asp-route-id="@item.ID">Delete</a>
-                </div>
-                <div class="d-flex justify-content-end">
-                    <a asp-action="#" class="">Details</a>
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card text-white bg-info shadow-sm h-100">
+                    <div class="card-header">
+                        <h5>@item.FullName</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">@item.ClassLevel.Name</h6>
+                        <p class="card-text">School: Encoder Kindergarden</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-outline-light btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-outline-danger btn-sm">Delete</a>
+                        <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-outline-light btn-sm">Details</a>
+                    </div>
                 </div>
             </div>
-
         }
-    
-
-   </div>
+    }
+    else
+    {
+        <div class="alert alert-warning text-center" role="alert">
+            No students found.
+        </div>
+    }
+</div>

@@ -24,11 +24,9 @@ namespace SMS.data.Migrations
 
             modelBuilder.Entity("SMS.core.Models.Attendence", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
@@ -39,42 +37,48 @@ namespace SMS.data.Migrations
                     b.Property<int>("StudentID")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("StudentID1")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("ID");
 
-                    b.HasIndex("StudentID")
-                        .IsUnique();
+                    b.HasIndex("StudentID1");
 
                     b.ToTable("Attendents");
                 });
 
             modelBuilder.Entity("SMS.core.Models.ClassLevel", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("TeacherId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("ID");
+
+                    b.HasIndex("TeacherId");
 
                     b.ToTable("ClassLevels");
                 });
 
             modelBuilder.Entity("SMS.core.Models.Designation", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("TeacherId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -82,92 +86,117 @@ namespace SMS.data.Migrations
 
                     b.HasKey("ID");
 
+                    b.HasIndex("TeacherId");
+
                     b.ToTable("Designations");
+                });
+
+            modelBuilder.Entity("SMS.core.Models.Exam", b =>
+                {
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ClassID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ExamDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ExamType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("SubjectID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ClassID");
+
+                    b.HasIndex("SubjectID");
+
+                    b.ToTable("Exams");
                 });
 
             modelBuilder.Entity("SMS.core.Models.ResultSheet", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    b.Property<Guid>("ExamID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("ClassLevelID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ExamTerm")
+                    b.Property<string>("Grade")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Marks")
-                        .HasColumnType("int");
+                    b.Property<decimal>("MarksObtained")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("StudentID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("StudentID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ClassLevelID")
-                        .IsUnique();
+                    b.HasIndex("ExamID");
 
-                    b.HasIndex("StudentID")
-                        .IsUnique();
+                    b.HasIndex("StudentID");
 
                     b.ToTable("ResultsSheets");
                 });
 
             modelBuilder.Entity("SMS.core.Models.Student", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ClassLevelId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ClassLevelId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("StudentID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ID");
 
                     b.HasIndex("ClassLevelId");
+
+                    b.HasIndex("StudentID");
 
                     b.ToTable("Students");
                 });
 
             modelBuilder.Entity("SMS.core.Models.Subject", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    b.Property<Guid>("ClassLevelID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("ClasslevelID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ResultSheetID")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ResultSheetID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("SubjectCode")
                         .IsRequired()
@@ -177,34 +206,35 @@ namespace SMS.data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("TeacherID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("ID");
 
-                    b.HasIndex("ClasslevelID");
+                    b.HasIndex("ClassLevelID");
 
                     b.HasIndex("ResultSheetID");
+
+                    b.HasIndex("TeacherID");
 
                     b.ToTable("Subjects");
                 });
 
             modelBuilder.Entity("SMS.core.Models.Teacher", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<Guid>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("ClassId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DesignationId")
-                        .HasColumnType("int");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -221,39 +251,76 @@ namespace SMS.data.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ClassId");
-
-                    b.HasIndex("DesignationId");
-
                     b.ToTable("Teachers");
                 });
 
             modelBuilder.Entity("SMS.core.Models.Attendence", b =>
                 {
                     b.HasOne("SMS.core.Models.Student", "Student")
-                        .WithOne("Attendence")
-                        .HasForeignKey("SMS.core.Models.Attendence", "StudentID")
+                        .WithMany("Attendence")
+                        .HasForeignKey("StudentID1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Student");
                 });
 
+            modelBuilder.Entity("SMS.core.Models.ClassLevel", b =>
+                {
+                    b.HasOne("SMS.core.Models.Teacher", "Teacher")
+                        .WithMany("Classes")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("SMS.core.Models.Designation", b =>
+                {
+                    b.HasOne("SMS.core.Models.Teacher", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("SMS.core.Models.Exam", b =>
+                {
+                    b.HasOne("SMS.core.Models.ClassLevel", "Class")
+                        .WithMany()
+                        .HasForeignKey("ClassID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMS.core.Models.Subject", "Subject")
+                        .WithMany()
+                        .HasForeignKey("SubjectID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Class");
+
+                    b.Navigation("Subject");
+                });
+
             modelBuilder.Entity("SMS.core.Models.ResultSheet", b =>
                 {
-                    b.HasOne("SMS.core.Models.ClassLevel", "ClassLevel")
-                        .WithOne("ResultSheet")
-                        .HasForeignKey("SMS.core.Models.ResultSheet", "ClassLevelID")
-                        .OnDelete(DeleteBehavior.NoAction)
+                    b.HasOne("SMS.core.Models.Exam", "Exam")
+                        .WithMany("Results")
+                        .HasForeignKey("ExamID")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("SMS.core.Models.Student", "Student")
-                        .WithOne("ResultSheet")
-                        .HasForeignKey("SMS.core.Models.ResultSheet", "StudentID")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .WithMany()
+                        .HasForeignKey("StudentID")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ClassLevel");
+                    b.Navigation("Exam");
 
                     b.Navigation("Student");
                 });
@@ -266,6 +333,10 @@ namespace SMS.data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("SMS.core.Models.Student", null)
+                        .WithMany("Students")
+                        .HasForeignKey("StudentID");
+
                     b.Navigation("ClassLevel");
                 });
 
@@ -273,7 +344,7 @@ namespace SMS.data.Migrations
                 {
                     b.HasOne("SMS.core.Models.ClassLevel", "ClassLevel")
                         .WithMany()
-                        .HasForeignKey("ClasslevelID")
+                        .HasForeignKey("ClassLevelID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -283,43 +354,32 @@ namespace SMS.data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("SMS.core.Models.Teacher", null)
+                        .WithMany("Subjects")
+                        .HasForeignKey("TeacherID");
+
                     b.Navigation("ClassLevel");
 
                     b.Navigation("ResultSheet");
                 });
 
-            modelBuilder.Entity("SMS.core.Models.Teacher", b =>
+            modelBuilder.Entity("SMS.core.Models.Exam", b =>
                 {
-                    b.HasOne("SMS.core.Models.ClassLevel", "ClassLevel")
-                        .WithMany()
-                        .HasForeignKey("ClassId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SMS.core.Models.Designation", "Designation")
-                        .WithMany()
-                        .HasForeignKey("DesignationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ClassLevel");
-
-                    b.Navigation("Designation");
-                });
-
-            modelBuilder.Entity("SMS.core.Models.ClassLevel", b =>
-                {
-                    b.Navigation("ResultSheet")
-                        .IsRequired();
+                    b.Navigation("Results");
                 });
 
             modelBuilder.Entity("SMS.core.Models.Student", b =>
                 {
-                    b.Navigation("Attendence")
-                        .IsRequired();
+                    b.Navigation("Attendence");
 
-                    b.Navigation("ResultSheet")
-                        .IsRequired();
+                    b.Navigation("Students");
+                });
+
+            modelBuilder.Entity("SMS.core.Models.Teacher", b =>
+                {
+                    b.Navigation("Classes");
+
+                    b.Navigation("Subjects");
                 });
 #pragma warning restore 612, 618
         }
