@@ -11,7 +11,9 @@ namespace SMS.core.Models
     {
         public string SubjectName {  get; set; }
         public string SubjectCode { get; set; }
+        public Guid ClassLevelId { get; set; }
         public ClassLevel ClassLevel { get; set; }
+        public Guid RasultSheetId { get; set; }
         public ResultSheet ResultSheet { get; set; }
       
 
