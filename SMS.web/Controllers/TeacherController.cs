@@ -54,11 +54,11 @@ namespace SMS.web.Controllers
         }
         public async Task<IActionResult> Edit(Guid id)
         {
-            if (id == null)
+            if (id == Guid.Empty)
             {
                 return NotFound();
             }
-            var teacher = _teacher.GetById(id);
+            var teacher = await _teacher.GetById(id);
             var model = _mapper.Map<Teacher>(teacher);
             return View(model);
 

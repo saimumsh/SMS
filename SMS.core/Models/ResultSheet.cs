@@ -17,6 +17,7 @@ namespace SMS.core.Models
 
         public Guid StudentID { get; set; }
         public Student Student { get; set; }
+        public ICollection<Subject> Subjects { get; set; }
     }
 
 }

@@ -192,7 +192,10 @@ namespace SMS.data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ClassLevelID")
+                    b.Property<Guid>("ClassLevelId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("RasultSheetId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("ResultSheetID")
@@ -211,7 +214,7 @@ namespace SMS.data.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ClassLevelID");
+                    b.HasIndex("ClassLevelId");
 
                     b.HasIndex("ResultSheetID");
 
@@ -344,12 +347,12 @@ namespace SMS.data.Migrations
                 {
                     b.HasOne("SMS.core.Models.ClassLevel", "ClassLevel")
                         .WithMany()
-                        .HasForeignKey("ClassLevelID")
+                        .HasForeignKey("ClassLevelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("SMS.core.Models.ResultSheet", "ResultSheet")
-                        .WithMany()
+                        .WithMany("Subjects")
                         .HasForeignKey("ResultSheetID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -366,6 +369,11 @@ namespace SMS.data.Migrations
             modelBuilder.Entity("SMS.core.Models.Exam", b =>
                 {
                     b.Navigation("Results");
+                });
+
+            modelBuilder.Entity("SMS.core.Models.ResultSheet", b =>
+                {
+                    b.Navigation("Subjects");
                 });
 
             modelBuilder.Entity("SMS.core.Models.Student", b =>
